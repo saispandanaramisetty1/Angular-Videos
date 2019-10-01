@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>001 Angular Basics</title>
+    </head>
+    <body>
+
+        <div style="background-color:#ffffaa" align = "center">
+            <script>
+                var c = '';
+                var opt = '';
+                var n = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+                var quiz = {"count": 5, "next": null, "previous": null, "results": [{"_class": "assessment", "id": 1351478, "assessment_type": "multiple-choice", "created": "2017-06-09T20:42:10Z", "prompt": {"feedbacks": ["", ""], "question": "<p>Angular is a </p>", "answers": ["<p>Front-end framework</p>", "<p>Back-end framework</p>"], "relatedLectureIds": ["7252000"]}, "correct_response": ["a"], "updated": "2017-06-09T20:42:47Z", "section": "", "question_plain": "Angular is a", "related_lectures": [{"_class": "lecture", "id": 7252000, "title": "Architecture of Angular Apps", "created": "2017-06-09T19:03:32Z", "asset": {"_class": "asset", "id": 8663320, "asset_type": "Video", "title": "Architecture of Angular Apps.mp4", "created": "2017-06-09T19:04:05Z"}, "object_index": 3, "url": "/the-complete-angular-master-class/learn/v4/t/lecture/7252000"}], "original_assessment_id": 0}, {"_class": "assessment", "id": 1351482, "assessment_type": "multiple-choice", "created": "2017-06-09T20:43:34Z", "prompt": {"question": "<p>When building client apps with Angular, we store the data </p>", "feedbacks": ["", ""], "answers": ["<p>on the client.</p>", "<p>on the server.</p>"], "relatedLectureIds": ["7252000"]}, "correct_response": ["b"], "updated": "2017-06-09T20:43:34Z", "section": "", "question_plain": "When building client apps with Angular, we store the data", "related_lectures": [{"_class": "lecture", "id": 7252000, "title": "Architecture of Angular Apps", "created": "2017-06-09T19:03:32Z", "asset": {"_class": "asset", "id": 8663320, "asset_type": "Video", "title": "Architecture of Angular Apps.mp4", "created": "2017-06-09T19:04:05Z"}, "object_index": 3, "url": "/the-complete-angular-master-class/learn/v4/t/lecture/7252000"}], "original_assessment_id": 0}, {"_class": "assessment", "id": 1351484, "assessment_type": "multiple-choice", "created": "2017-06-09T20:45:06Z", "prompt": {"feedbacks": ["", "", "", ""], "question": "<p>When architecting our applications, what kind of logic do we implement on the client?</p>", "answers": ["<p>Application Logic</p>", "<p>Business Logic</p>", "<p>Presentation Logic</p>", "<p>Data Access Logic</p>"], "relatedLectureIds": ["7252000"]}, "correct_response": ["c"], "updated": "2017-06-09T20:45:06Z", "section": "", "question_plain": "When architecting our applications, what kind of logic do we implement on the client?", "related_lectures": [{"_class": "lecture", "id": 7252000, "title": "Architecture of Angular Apps", "created": "2017-06-09T19:03:32Z", "asset": {"_class": "asset", "id": 8663320, "asset_type": "Video", "title": "Architecture of Angular Apps.mp4", "created": "2017-06-09T19:04:05Z"}, "object_index": 3, "url": "/the-complete-angular-master-class/learn/v4/t/lecture/7252000"}], "original_assessment_id": 0}, {"_class": "assessment", "id": 1351486, "assessment_type": "multiple-choice", "created": "2017-06-09T20:46:25Z", "prompt": {"question": "<p>How can we create a new Angular project (my-app) using Angular CLI?</p>", "feedbacks": ["", "", "", ""], "answers": ["<p>ng create m-app</p>", "<p>ng new my-app</p>", "<p>ng new app my-app</p>", "<p>ng generate my-app</p>"], "relatedLectureIds": ["7252554"]}, "correct_response": ["b"], "updated": "2017-06-09T20:46:25Z", "section": "", "question_plain": "How can we create a new Angular project (my-app) using Angular CLI?", "related_lectures": [{"_class": "lecture", "id": 7252554, "title": "Your First Angular App", "created": "2017-06-09T20:39:53Z", "asset": {"_class": "asset", "id": 8663868, "asset_type": "Video", "title": "Your First Angular App-final.mov", "created": "2017-06-09T20:40:09Z"}, "object_index": 5, "url": "/the-complete-angular-master-class/learn/v4/t/lecture/7252554"}], "original_assessment_id": 0}, {"_class": "assessment", "id": 1351488, "assessment_type": "multiple-choice", "created": "2017-06-09T20:47:59Z", "prompt": {"question": "<p>What is Webpack?</p>", "feedbacks": ["", "", ""], "answers": ["<p>A tool that creates bundles for JavaScript code and stylesheets and injects those bundles into index.html at run-time. </p>", "<p>A tool for packaging and deploying web applications. </p>", "<p>A JavaScript test runner. </p>"], "relatedLectureIds": ["7252558"]}, "correct_response": ["a"], "updated": "2017-06-09T20:47:59Z", "section": "", "question_plain": "What is Webpack?", "related_lectures": [{"_class": "lecture", "id": 7252558, "title": "Structure of Angular Projects", "created": "2017-06-09T20:40:16Z", "asset": {"_class": "asset", "id": 8663870, "asset_type": "Video", "title": "Structure of Angular Projects-final.mov", "created": "2017-06-09T20:40:56Z"}, "object_index": 6, "url": "/the-complete-angular-master-class/learn/v4/t/lecture/7252558"}], "original_assessment_id": 0}]};
+
+                for (var i = 0; i < quiz.results.length; i++) {
+
+                    var question = '<font color="ff0000"><br><h3>Question-' + i + ': </h3> <b>' + quiz.results[i].prompt.question + '</b> <br>';
+
+                    for (var j = 0; j < quiz.results[i].prompt.answers.length; j++) {
+
+                        opt = opt.concat(quiz.results[i].prompt.answers[j] ? '<p style="cursor: pointer" onclick="this.style=\'font-weight: bold; color: #CE534D\'">' + n[j] + ': ' + quiz.results[i].prompt.answers[j].toString().replace(/,/g, '<br>') + '</p>' : '<br>');
+                    }
+                    var ans = quiz.results[i].correct_response ? '<p> <br> <input style="cursor: pointer" type="button" onclick="this.value=\'Answer is: ' + quiz.results[i].correct_response.toString() + '\'" value="Show Answer"></input> </p>' : '<br>';
+                    c = c.concat(question, opt, ans);
+                    opt = ''
+                    }
+                document.write(c);
+            </script>
+        </div>
+    </body>
+    </html>
